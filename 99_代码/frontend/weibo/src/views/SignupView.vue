@@ -12,36 +12,35 @@
                 <p class="font-bold">
                     Already have an account? <RouterLink :to="{'name': 'login'}" class="underline">Click here</RouterLink> to log in!
                 </p>
-            </div>      
-            
+            </div>
         </div>
 
         <div class="main-right">
             <div class="p-12 bg-white border border-gray-200 rounded-lg">
-                <form class="space-y-6">
+                <form class="space-y-6" v-on:submit.prevent="submitForm">
                     <div>
                         <label>Name</label><br>
-                        <input type="text"  placeholder="Your full name" class="w-full mt-2 py-4 px-6 border border-gray-200 rounded-lg">
+                        <input type="text" v-model="form.name" placeholder="Your full name" class="w-full mt-2 py-4 px-6 border border-gray-200 rounded-lg">
                     </div>
 
                     <div>
                         <label>E-mail</label><br>
-                        <input type="email"  placeholder="Your e-mail address" class="w-full mt-2 py-4 px-6 border border-gray-200 rounded-lg">
+                        <input type="email" v-model="form.email" placeholder="Your e-mail address" class="w-full mt-2 py-4 px-6 border border-gray-200 rounded-lg">
                     </div>
 
                     <div>
                         <label>Password</label><br>
-                        <input type="password"  placeholder="Your password" class="w-full mt-2 py-4 px-6 border border-gray-200 rounded-lg">
+                        <input type="password" v-model="form.password1" placeholder="Your password" class="w-full mt-2 py-4 px-6 border border-gray-200 rounded-lg">
                     </div>
 
                     <div>
                         <label>Repeat password</label><br>
-                        <input type="password"  placeholder="Repeat your password" class="w-full mt-2 py-4 px-6 border border-gray-200 rounded-lg">
+                        <input type="password" v-model="form.password2" placeholder="Repeat your password" class="w-full mt-2 py-4 px-6 border border-gray-200 rounded-lg">
                     </div>
 
-                    <template>
+                    <template v-if="errors.length > 0">
                         <div class="bg-red-300 text-white rounded-lg p-6">
-                            <p></p>
+                            <p v-for="error in errors" v-bind:key="error">{{ error }}</p>
                         </div>
                     </template>
 
@@ -123,6 +122,3 @@ export default {
     }
 }
 </script>
-
-
-
