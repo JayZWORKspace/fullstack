@@ -2,7 +2,7 @@
     <div class="max-w-7xl mx-auto grid grid-cols-4 gap-4">
         <div class="main-left col-span-1">
             <div class="p-4 bg-white border border-gray-200 text-center rounded-lg">
-                <img src="@/assets/linkedin.jpg" class="mb-6 rounded-full">
+                <img src="@/assets/linkedin.jpg" class="mb-6 rounded-full" >
                 
                 <p><strong>You-know-who</strong></p>
 
@@ -29,7 +29,7 @@
             <div class="p-4 bg-white border border-gray-200 rounded-lg">
                 <div class="mb-6 flex items-center justify-between">
                     <div class="flex items-center space-x-6">
-                        <img src="@/assets/linkedin.jpg" class="mb-6 rounded-full" style="width: auto; height: 40px;">
+                        <img src="@/assets/linkedin.jpg" class="w-[40px] rounded-full">
                         
                         <p><strong>You-know-who</strong></p>
                     </div>
@@ -69,7 +69,7 @@
             <div class="p-4 bg-white border border-gray-200 rounded-lg">
                 <div class="mb-6 flex items-center justify-between">
                     <div class="flex items-center space-x-6">
-                        <img src="@/assets/linkedin.jpg" class="mb-6 rounded-full" style="width: auto; height: 40px;">
+                        <img src="@/assets/linkedin.jpg" class="w-[40px] rounded-full">
                         
                         <p><strong>You-know-who</strong></p>
                     </div>
@@ -106,7 +106,6 @@
                 </div>  
             </div>
         </div>
-
         <div class="main-right col-span-1 space-y-4">
             <PeopleYouMayKnow />
 
@@ -115,3 +114,15 @@
     </div>
 </template>
 
+<script>
+import PeopleYouMayKnow from '../components/PeopleYouMayKnow.vue'
+import Trends from '../components/Trends.vue'
+
+export default {
+    name: 'FeedView',
+    components: {
+        PeopleYouMayKnow,
+        Trends,
+    }
+}
+</script>
