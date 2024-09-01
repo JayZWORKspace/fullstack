@@ -42,7 +42,7 @@ SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(days=180),
 
     # 仅有一个token可用
-    'ROTATE_REFRESH_TOKEN': True,
+    'ROTATE_REFRESH_TOKEN': False,
 }
 
 
@@ -81,12 +81,12 @@ MIDDLEWARE = [
 
 
 CORS_ALLOWED_ORIGINS = [
-    "http://127.0.0.1:3000",
+    "http://127.0.0.1:5173",
 
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "http://127.0.0.1:3000"
+    "http://127.0.0.1:5173"
 ]
 
 ROOT_URLCONF = 'djgo.urls'
@@ -94,7 +94,7 @@ CORS_ALLOW_ALL_ORIGINS = True  # 或者指定允许的域名
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

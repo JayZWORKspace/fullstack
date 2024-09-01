@@ -26,7 +26,8 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 urlpatterns = [
     # 从weibo_app的urls里面寻找url（login/， refresh/之类的）
+    # path('', include('weibo_app.urls')),
     path('api/', include('weibo_app.urls')),
     path('admin/', admin.site.urls),
-    path("api/weibo_app/", include("weibo_app.urls")),
+   
 ]
